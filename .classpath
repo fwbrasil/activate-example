@@ -1,0 +1,34 @@
+<classpath>
+  <classpathentry output="target/scala-2.9.1/classes" path="src/main/scala" kind="src"></classpathentry>
+  <classpathentry output="target/scala-2.9.1/classes" path="src/main/java" kind="src"></classpathentry>
+  <classpathentry output="target/scala-2.9.1/test-classes" path="src/test/scala" kind="src"></classpathentry>
+  <classpathentry output="target/scala-2.9.1/test-classes" path="src/test/java" kind="src"></classpathentry>
+  <classpathentry path="org.scala-ide.sdt.launching.SCALA_CONTAINER" kind="con"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/net.fwbrasil/activate-core_2.9.1/jars/activate-core_2.9.1-0.6.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/org.javassist/javassist/jars/javassist-3.15.0-GA.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/net.fwbrasil/radon-stm_2.9.1/jars/radon-stm_2.9.1-0.6.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/commons-collections/commons-collections/jars/commons-collections-3.2.1.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/org.objenesis/objenesis/jars/objenesis-1.2.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/org.safehaus.jug/jug/jars/jug-2.0.0-lgpl.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/org.reflections/reflections/jars/reflections-0.9.5-RC2.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/com.google.collections/google-collections/jars/google-collections-1.0.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/javassist/javassist/jars/javassist-3.8.0.GA.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/dom4j/dom4j/jars/dom4j-1.6.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.0.b2.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/com.google.code.gson/gson/jars/gson-1.4.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/javax.servlet/servlet-api/jars/servlet-api-2.5.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/org.clapper/grizzled-slf4j_2.9.1/jars/grizzled-slf4j_2.9.1-0.6.6.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.6.2.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-0.9.29.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-0.9.29.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/joda-time/joda-time/jars/joda-time-2.0.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/org.joda/joda-convert/jars/joda-convert-1.1.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/net.fwbrasil/activate-prevayler_2.9.1/jars/activate-prevayler_2.9.1-0.6.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/org.prevayler/prevayler/jars/prevayler-2.3.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/net.fwbrasil/activate-jdbc_2.9.1/jars/activate-jdbc_2.9.1-0.6.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/net.fwbrasil/activate-mongo_2.9.1/jars/activate-mongo_2.9.1-0.6.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/org.mongodb/mongo-java-driver/jars/mongo-java-driver-2.7.2.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/fwbrasil/.ivy2/cache/mysql/mysql-connector-java/jars/mysql-connector-java-5.1.16.jar" kind="lib"></classpathentry>
+  <classpathentry path="org.eclipse.jdt.launching.JRE_CONTAINER" kind="con"></classpathentry>
+  <classpathentry path="bin" kind="output"></classpathentry>
+</classpath>
