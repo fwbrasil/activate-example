@@ -1,0 +1,10 @@
+**.DS_Store
+**.classpath
+**.project
+**.settings
+**target
+**.cache
+**.scala_dependencies
+test
+activate
+**.byke
