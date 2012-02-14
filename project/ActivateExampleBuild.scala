@@ -21,7 +21,12 @@ object ActivateExampleBuild extends Build {
   		id = "activate-example",
   		base = file("."),
   		settings = Defaults.defaultSettings ++ Seq(
+  				
+  				
+  		/* ADD THE DEPENDENCY TO YOUR STORAGE HERE */
         libraryDependencies ++= Seq(activateCore, /*activatePrevayler, activateJdbc, activateMongo, mysql, objbd6*/),
+        
+        
         organization := "com.example.foo",
 	      scalaVersion := "2.9.1",
 	      version := "1.0",
