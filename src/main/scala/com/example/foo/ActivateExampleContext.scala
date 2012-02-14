@@ -2,11 +2,11 @@ package com.example.foo
 
 import net.fwbrasil.activate.ActivateContext
 import net.fwbrasil.activate.storage.memory.MemoryStorage
-import net.fwbrasil.activate.storage.prevayler.PrevaylerMemoryStorage
-import net.fwbrasil.activate.storage.relational.SimpleJdbcRelationalStorage
-import net.fwbrasil.activate.storage.relational.oracleDialect
-import net.fwbrasil.activate.storage.relational.mySqlDialect
-import net.fwbrasil.activate.storage.mongo.MongoStorage
+//import net.fwbrasil.activate.storage.prevayler.PrevaylerMemoryStorage
+//import net.fwbrasil.activate.storage.relational.SimpleJdbcRelationalStorage
+//import net.fwbrasil.activate.storage.relational.oracleDialect
+//import net.fwbrasil.activate.storage.relational.mySqlDialect
+//import net.fwbrasil.activate.storage.mongo.MongoStorage
 
 // Initially, must be created the context of Activate. The context must be a singleton, so it makes sense to declare as "object".
 object activateExampleContext extends ActivateContext {
