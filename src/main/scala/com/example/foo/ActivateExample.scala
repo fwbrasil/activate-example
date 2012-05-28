@@ -22,13 +22,11 @@ object ActivateExample extends App {
 	// Queries
 	// The query operators available are: ==, <,:>, <=,> =, isNone, isSome,: | | and: &&. 
 	// Note that the queries can be made about abstract entities (abstract trait and class).
-	val q = query {
-		(person: Person) => where(person.name :== "John2") select (person)
-	}
-
 	// Perform queries within transactions
 	transactional {
-		val result = q.execute
+		val result = query {
+			(person: Person) => where(person.name :== "John2") select (person)
+		}
 		for (person <- result)
 			println(person.name)
 	}
@@ -45,11 +43,11 @@ object ActivateExample extends App {
 	// Note: Queries involving more than one entity are not supported by MongoStorage.
 	transactional {
 		new LegalPerson("comp", all[NaturalPerson].head)
-		val res1 = executeQuery {
+		val res1 = query {
 			(company: LegalPerson, director: NaturalPerson) => where(company.director :== director) select (company, director)
 		}
 		println(res1)
-		val res2 = executeQuery {
+		val res2 = query {
 			(company: LegalPerson) => where(company.director.name :== "John2") select (company)
 		}
 		println(res2)
