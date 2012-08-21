@@ -4,9 +4,25 @@ import com.example.foo.activateExampleContext._
 
 // An entity shall extend the trait "Entity"
 // You can declare the properties as val or var, where they are immutable or not.
-abstract class Person(var name: String) extends Entity
-class NaturalPerson(name: String, var motherName: String) extends Person(name)
-class LegalPerson(name: String, var director: NaturalPerson) extends Person(name)
+trait Person extends Entity {
+	var name: String
+
+	override def delete =
+		preCondition(name != "Undeletable Person") {
+			super.delete
+		}
+
+	def modifyName(newName: String) = {
+		name = newName
+	} postCondition (name == newName)
+
+	def nameMustNotBeEmpty =
+		invariant(errorParams = List(name)) {
+			name != null && name.nonEmpty
+		}
+}
+class NaturalPerson(var name: String, var motherName: String) extends Person
+class LegalPerson(var name: String, var director: NaturalPerson) extends Person
 
 object ActivateExample extends App {
 

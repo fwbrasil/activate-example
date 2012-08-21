@@ -1,7 +1,7 @@
 package com.example.foo
 
 import net.fwbrasil.activate.ActivateContext
-import net.fwbrasil.activate.storage.memory.MemoryStorage
+import net.fwbrasil.activate.storage.memory.TransientMemoryStorage
 import net.fwbrasil.activate.storage.prevayler.PrevaylerStorage
 import net.fwbrasil.activate.storage.relational.PooledJdbcRelationalStorage
 import net.fwbrasil.activate.storage.relational.idiom.oracleDialect
@@ -15,7 +15,7 @@ object activateExampleContext extends ActivateContext {
 	// It is important that the context name is unique, but you can have multiple contexts in the same VM.
 	def contextName = "activateExampleContext"
 
-	val storage = new MemoryStorage
+	val storage = new TransientMemoryStorage
 
 	//	val storage = new PrevaylerStorage
 
