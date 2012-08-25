@@ -7,24 +7,16 @@ import com.example.foo.activateExampleContext._
 trait Person extends Entity {
 	var name: String
 
-	override def delete =
-		preCondition(name != "Undeletable Person") {
-			super.delete
-		}
-
-	def modifyName(newName: String) = {
-		name = newName
-	} postCondition (name == newName)
-
-	def nameMustNotBeEmpty =
-		invariant(errorParams = List(name)) {
-			name != null && name.nonEmpty
-		}
+	// Invariants are validation predicates that are verified in the entity lifecycle. 
+	// They are special instance methods:
+	def invariantNameMustNotBeEmpty = invariant {
+		name != null && name.nonEmpty
+	}
 }
 class NaturalPerson(var name: String, var motherName: String) extends Person
 class LegalPerson(var name: String, var director: NaturalPerson) extends Person
 
-object ActivateExample extends App {
+object ExampleMain extends App {
 
 	// Use whenever entities within transactions
 	// It is not necessary to call a method like "store" or "save" to add the entity. 
@@ -36,7 +28,7 @@ object ActivateExample extends App {
 	}
 
 	// Queries
-	// The query operators available are: ==, <,:>, <=,> =, isNone, isSome,: | | and: &&. 
+	// The query operators available are :==, <, :>, <=, >=, isNone, isSome, :||, :&&, like and matches. 
 	// Note that the queries can be made about abstract entities (abstract trait and class).
 	// Perform queries within transactions
 	transactional {
@@ -69,6 +61,13 @@ object ActivateExample extends App {
 		println(res2)
 	}
 
+	// The complete query form supports the order by clause.
+	transactional {
+		query {
+			(company: LegalPerson) => where(company.director.name :== "John2") select (company) orderBy (company.name)
+		}
+	}
+
 	// To delete an entity
 	transactional {
 		for (person <- all[Person])
@@ -99,5 +98,16 @@ object ActivateExample extends App {
 			person.name = "Test2"
 		}
 		println(person.name)
+	}
+
+	// Activate supports mass update/delete statements. 
+	// Use then when you have to perform a really big update/delete operation.
+	transactional {
+		update {
+			(person: NaturalPerson) => where(person.name :== "Test") set (person.name := "Test2")
+		}
+		delete {
+			(person: NaturalPerson) => where(person.name :== "Test2")
+		}
 	}
 }

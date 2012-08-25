@@ -9,7 +9,7 @@ import net.fwbrasil.activate.storage.relational.idiom.mySqlDialect
 import net.fwbrasil.activate.storage.relational.idiom.postgresqlDialect
 import net.fwbrasil.activate.storage.mongo.MongoStorage
 
-// Initially, must be created the context of Activate. The context must be a singleton, so it makes sense to declare as "object".
+// Initially, must be created the persistence context. It must be a singleton, so it makes sense to declare as "object".
 object activateExampleContext extends ActivateContext {
 
 	// It is important that the context name is unique, but you can have multiple contexts in the same VM.
@@ -29,8 +29,8 @@ object activateExampleContext extends ActivateContext {
 	//	val storage = new PooledJdbcRelationalStorage {
 	//		val jdbcDriver = "com.mysql.jdbc.Driver"
 	//		val user = "root"
-	//		val password = "root"
-	//		val url = "jdbc:mysql://127.0.0.1/test"
+	//		val password = ""
+	//		val url = "jdbc:mysql://127.0.0.1/activate_test"
 	//		val dialect = mySqlDialect
 	//	}
 
