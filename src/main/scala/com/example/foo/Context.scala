@@ -12,9 +12,6 @@ import net.fwbrasil.activate.storage.mongo.MongoStorage
 // Initially, must be created the persistence context. It must be a singleton, so it makes sense to declare as "object".
 object activateExampleContext extends ActivateContext {
 
-	// It is important that the context name is unique, but you can have multiple contexts in the same VM.
-	def contextName = "activateExampleContext"
-
 	val storage = new TransientMemoryStorage
 
 	//	val storage = new PrevaylerStorage

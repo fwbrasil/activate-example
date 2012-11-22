@@ -28,8 +28,8 @@ object ExampleMain extends App {
 	}
 
 	// Queries
-	// The query operators available are :==, <, :>, <=, >=, isNone, isSome, :||, :&&, like and matches. 
-	// Note that the queries can be made about abstract entities (abstract trait and class).
+	// The query operators available are :==, :<, :>, :<=, :>=, isNone, isSome, :||, :&&, like and matches. 
+	// Note that the queries can be made about abstract entities (traits and classes).
 	// Perform queries within transactions
 	transactional {
 		val result = query {
@@ -40,10 +40,10 @@ object ExampleMain extends App {
 	}
 
 	// There are alternative forms of query. 
-	// With the allWhere you can use a list of criterias.
+	// With the "select where" you can use a list of criterias.
 	transactional {
 		val personList1 = all[Person]
-		val personList2 = allWhere[NaturalPerson](_.name :== "John2", _.motherName :== "Marie")
+		val personList2 = select[NaturalPerson] where (_.name :== "John2", _.motherName :== "Marie")
 		println(personList1, personList2)
 	}
 

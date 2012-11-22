@@ -6,9 +6,9 @@ object ActivateExampleBuild extends Build {
 	/* Dependencies */
 	val fwbrasilRepo = "fwbrasil.net" at "http://fwbrasil.net/maven/"
 	val activateCore = "net.fwbrasil" %% "activate-core" % "1.0"
-	val activatePrevayler = "net.fwbrasil" %% "activate-prevayler" % "1.0"
-	val activateJdbc = "net.fwbrasil" %% "activate-jdbc" % "1.0"
-	val activateMongo = "net.fwbrasil" %% "activate-mongo" % "1.0"
+	val activatePrevayler = "net.fwbrasil" %% "activate-prevayler" % "1.1"
+	val activateJdbc = "net.fwbrasil" %% "activate-jdbc" % "1.1"
+	val activateMongo = "net.fwbrasil" %% "activate-mongo" % "1.1"
 	val mysql = "mysql" % "mysql-connector-java" % "5.1.16"
 	/* 
     Install oracle in your local repo:
