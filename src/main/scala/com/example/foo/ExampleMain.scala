@@ -101,7 +101,7 @@ object ExampleMain extends App {
 	}
 
 	// Activate supports mass update/delete statements. 
-	// Use then when you have to perform a really big update/delete operation.
+	// Use them when you have to perform a really big update/delete operation.
 	transactional {
 		update {
 			(person: NaturalPerson) => where(person.name :== "Test") set (person.name := "Test2")
