@@ -4,11 +4,12 @@ import Keys._
 object ActivateExampleBuild extends Build {
 
 	/* Dependencies */
+	val localMavenRepo = "Local Maven Repository" at "file://"+Path.userHome+"/.m2/repository"
 	val fwbrasilRepo = "fwbrasil.net" at "http://fwbrasil.net/maven/"
 	val activateCore = "net.fwbrasil" %% "activate-core" % "1.2"
-	val activatePrevayler = "net.fwbrasil" %% "activate-prevayler" % "1.3-SNAPSHOT"
-	val activateJdbc = "net.fwbrasil" %% "activate-jdbc" % "1.3-SNAPSHOT"
-	val activateMongo = "net.fwbrasil" %% "activate-mongo" % "1.3-SNAPSHOT"
+	val activatePrevayler = "net.fwbrasil" %% "activate-prevayler" % "1.3"
+	val activateJdbc = "net.fwbrasil" %% "activate-jdbc" % "1.3"
+	val activateMongo = "net.fwbrasil" %% "activate-mongo" % "1.3"
 	val mysql = "mysql" % "mysql-connector-java" % "5.1.16"
 	/* 
     Install oracle in your local repo:
@@ -26,6 +27,6 @@ object ActivateExampleBuild extends Build {
 				organization := "com.example.foo",
 				scalaVersion := "2.10.1",
 				version := "1.0",
-				resolvers += fwbrasilRepo))
+				resolvers ++= Seq(localMavenRepo, fwbrasilRepo)))
 
 }
