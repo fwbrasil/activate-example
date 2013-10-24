@@ -7,7 +7,7 @@ object ActivateExampleBuild extends Build {
 	val localMavenRepo = "Local Maven Repository" at "file://"+Path.userHome+"/.m2/repository"
 	val fwbrasilRepo = "fwbrasil.net" at "http://fwbrasil.net/maven/"
 
-	val activateVersion = "1.4.1"
+	val activateVersion = "1.4.4"
 	val activateCore = "net.fwbrasil" %% "activate-core" % activateVersion
 	val activatePrevayler = "net.fwbrasil" %% "activate-prevayler" % activateVersion
 	val activateJdbc = "net.fwbrasil" %% "activate-jdbc" % activateVersion
