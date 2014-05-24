@@ -23,26 +23,26 @@ object activateExampleContext extends ActivateContext {
 	//		override val authentication = Option("user", "pass")
 	//	}
 
-	//	val storage = new PooledJdbcRelationalStorage {
-	//		val jdbcDriver = "com.mysql.jdbc.Driver"
-	//		val user = "root"
-	//		val password = ""
-	//		val url = "jdbc:mysql://127.0.0.1/activate_test"
-	//		val dialect = mySqlDialect
-	//	}
+	// val storage = new PooledJdbcRelationalStorage {
+	// 	    val jdbcDriver = "com.mysql.jdbc.Driver"
+	// 	    val user = Some("root")
+	// 	    val password = None
+	// 	    val url = "jdbc:mysql://127.0.0.1/activate_test"
+	// 	    val dialect = mySqlDialect
+	// }
 
 	//	val storage = new PooledJdbcRelationalStorage {
 	//		val jdbcDriver = "oracle.jdbc.driver.OracleDriver"
-	//		val user = "USER"
-	//		val password = "PASS"
+	//		val user = Some("USER")
+	//		val password = Some("PASS")
 	//		val url = "jdbc:oracle:thin:@localhost:1521:oracle"
 	//		val dialect = oracleDialect
 	//	}
 
 	//	val storage = new PooledJdbcRelationalStorage {
 	//		val jdbcDriver = "org.postgresql.Driver"
-	//		val user = "postgres"
-	//		val password = "teste"
+	//		val user = Some("postgres")
+	//		val password = None
 	//		val url = "jdbc:postgresql://127.0.0.1/postgres"
 	//		val dialect = postgresqlDialect
 	//	}
