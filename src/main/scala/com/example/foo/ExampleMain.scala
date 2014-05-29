@@ -1,10 +1,11 @@
 package com.example.foo
 
 import com.example.foo.activateExampleContext._
+import net.fwbrasil.activate.entity.EntityWithCustomID
 
 // An entity shall extend the trait "Entity"
 // You can declare the properties as val or var, where they are immutable or not.
-trait Person extends Entity {
+trait Person extends EntityWithCustomID[String] {
 	var name: String
 
 	// Invariants are validation predicates that are verified in the entity lifecycle. 
@@ -13,8 +14,8 @@ trait Person extends Entity {
 		name != null && name.nonEmpty
 	}
 }
-class NaturalPerson(var name: String, var motherName: String) extends Person
-class LegalPerson(var name: String, var director: NaturalPerson) extends Person
+class NaturalPerson(val id: String, var name: String, var motherName: String) extends Person
+class LegalPerson(val id: String, var name: String, var director: NaturalPerson) extends Person
 
 object ExampleMain extends App {
 
@@ -22,7 +23,7 @@ object ExampleMain extends App {
 	// It is not necessary to call a method like "store" or "save" to add the entity. 
 	// Just create, use, and it will be persisted. 
 	transactional {
-		val person = new NaturalPerson("John", "Marie")
+		val person = new NaturalPerson("1", "John", "Marie")
 		person.name = "John2"
 		println(person.name)
 	}
@@ -50,7 +51,7 @@ object ExampleMain extends App {
 	// Queries using more than one entity or nested properties
 	// Note: Queries involving more than one entity are not supported by MongoStorage.
 	transactional {
-		new LegalPerson("comp", all[NaturalPerson].head)
+		new LegalPerson("2", "comp", all[NaturalPerson].head)
 		val res1 = query {
 			(company: LegalPerson, director: NaturalPerson) => where(company.director :== director) select (company, director)
 		}
@@ -78,13 +79,13 @@ object ExampleMain extends App {
 	// But you can control the transaction as follows
 	val transaction = new Transaction
 	transactional(transaction) {
-		new NaturalPerson("Test", "Mother")
+		new NaturalPerson("3", "Test", "Mother")
 	}
 	transaction.commit
 
 	// Defining the propagation of the transaction
 	transactional {
-		val person = new NaturalPerson("Test", "Mother")
+		val person = new NaturalPerson("4", "Test", "Mother")
 		transactional(mandatory) {
 			person.name = "Test2"
 		}
@@ -93,7 +94,7 @@ object ExampleMain extends App {
 
 	// Nested transactions are a type of propagation
 	transactional {
-		val person = new NaturalPerson("Test", "Mother")
+		val person = new NaturalPerson("5", "Test", "Mother")
 		transactional(nested) {
 			person.name = "Test2"
 		}
