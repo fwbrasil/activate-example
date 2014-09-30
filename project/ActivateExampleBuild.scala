@@ -7,7 +7,7 @@ object ActivateExampleBuild extends Build {
 	val localMavenRepo = "Local Maven Repository" at "file://"+Path.userHome+"/.m2/repository"
 	val fwbrasilRepo = "fwbrasil.net" at "http://fwbrasil.net/maven/"
 
-	val activateVersion = "1.6"
+	val activateVersion = "1.7"
 	val activateCore = "net.fwbrasil" %% "activate-core" % activateVersion
 	val activatePrevayler = "net.fwbrasil" %% "activate-prevayler" % activateVersion
 	val activateJdbc = "net.fwbrasil" %% "activate-jdbc" % activateVersion
@@ -28,7 +28,7 @@ object ActivateExampleBuild extends Build {
 				/* ADD THE DEPENDENCY TO YOUR STORAGE HERE */
 				libraryDependencies ++= Seq(activateCore, activateJdbc, activatePrevayler, activateMongo, mysql, postgresql/*, objbd6*/),
 				organization := "com.example.foo",
-				scalaVersion := "2.10.1",
+				scalaVersion := "2.11.2",
 				version := "1.0",
 				resolvers ++= Seq(localMavenRepo, fwbrasilRepo)))
 
